@@ -10,6 +10,11 @@ from .seq import prbs7, str_to_bits
 DEFAULT_PRBS = 64
 
 
+def _device(v):
+    """Indice numerico (como listado por `python -m sounddevice`) ou nome."""
+    return int(v) if v.strip().isdigit() else v
+
+
 def add_payload_args(p, prefix=""):
     """--texto / --prbs / --bits (com prefixo 'esperado-' no receptor)."""
     g = p.add_mutually_exclusive_group()
@@ -41,7 +46,7 @@ def add_link_args(p):
     p.add_argument("--rb", type=float, default=TxConfig.rb, help="taxa de bits (bit/s)")
     p.add_argument("--fp", type=float, default=TxConfig.fp, help="portadora (Hz)")
     p.add_argument("--fa", type=int, default=TxConfig.fa, help="amostragem (Hz)")
-    p.add_argument("--device", default=None, help="dispositivo de audio (sounddevice)")
+    p.add_argument("--device", type=_device, default=None, help="dispositivo de audio (sounddevice)")
 
 
 def add_rx_args(p):
