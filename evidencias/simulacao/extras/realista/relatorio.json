@@ -1,0 +1,77 @@
+{
+  "cenario": "simulacao_realista",
+  "data": "2026-11-02 20:36:13",
+  "maquina": "fedora",
+  "tx_config": {
+    "rb": 100,
+    "fp": 2000,
+    "fa": 8000,
+    "rolloff": 0.5,
+    "rc_delay": 3,
+    "amplitude": 0.9
+  },
+  "rx_config": {
+    "rb": 100,
+    "fp": 2000,
+    "fa": 8000,
+    "costas_order": 64,
+    "costas_cutoff": 0.001,
+    "costas_mu": 0.03,
+    "el_d": 1,
+    "el_err": 0.01,
+    "sfd_threshold": 0.9,
+    "bandpass": true,
+    "bandpass_bw": 1000.0,
+    "agc": true,
+    "lowpass": true,
+    "lowpass_cutoff": null,
+    "lowpass_taps": null
+  },
+  "quadro": {
+    "sfd_encontrado": true,
+    "pico_correlacao": 32.0,
+    "posicao_sfd_bit": 92,
+    "polaridade_invertida": false,
+    "bytes_cabecalho": 8,
+    "payload_completo": true,
+    "bits_decididos": 283
+  },
+  "comparacao": {
+    "bits_enviados": "0000001000001100001010001111001000101100111010100111110100001110",
+    "bits_recebidos": "0000001000001100001010001111001000101100111010100111110100001110",
+    "n_sent": 64,
+    "n_received": 64,
+    "n_errors": 0,
+    "missing": 0,
+    "ber": 0.0,
+    "error_positions": [],
+    "equal": true
+  },
+  "sinal": {
+    "amostras_tx": 14720,
+    "duracao_tx_s": 1.84,
+    "amostras_rx": 22722,
+    "pico_rx": 0.7961455498332899,
+    "snr_decisao_db": 12.344792784549945
+  },
+  "figuras": [
+    "espectro.png",
+    "olho.png",
+    "constelacao.png",
+    "correlacao_sfd.png",
+    "bits_enviados_recebidos.png",
+    "sincronizacao.png"
+  ],
+  "tipo": "simulacao",
+  "descricao": "atraso 0.5 s, ganho 0.3, fase 1 rad, desvio 0.5 Hz, relogio 100 ppm, Eb/N0 12 dB",
+  "canal": {
+    "lead_s": 0.5,
+    "tail_s": 0.5,
+    "gain": 0.3,
+    "phase_rad": 1.0,
+    "freq_offset_hz": 0.5,
+    "clock_ppm": 100,
+    "ebn0_db": 12,
+    "seed": 1
+  }
+}

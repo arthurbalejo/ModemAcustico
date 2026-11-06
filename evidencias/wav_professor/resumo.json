@@ -1,0 +1,56 @@
+[
+  {
+    "arquivo": "sinal_rx.wav",
+    "receptor": "extras",
+    "sfd_ok": true,
+    "pico_sfd": 32.0,
+    "bytes": 3,
+    "texto": "OLA",
+    "erros_vs_OLA": 0
+  },
+  {
+    "arquivo": "sinal_rx.wav",
+    "receptor": "professor",
+    "sfd_ok": true,
+    "pico_sfd": 32.0,
+    "bytes": 3,
+    "texto": "OLA",
+    "erros_vs_OLA": 0
+  },
+  {
+    "arquivo": "sinal_rx2.wav",
+    "receptor": "extras",
+    "sfd_ok": true,
+    "pico_sfd": 32.0,
+    "bytes": 3,
+    "texto": "OLA",
+    "erros_vs_OLA": 0
+  },
+  {
+    "arquivo": "sinal_rx2.wav",
+    "receptor": "professor",
+    "sfd_ok": true,
+    "pico_sfd": 32.0,
+    "bytes": 3,
+    "texto": "OLA",
+    "erros_vs_OLA": 0
+  },
+  {
+    "arquivo": "sinal_rx3.wav",
+    "receptor": "extras",
+    "sfd_ok": false,
+    "pico_sfd": 14.0,
+    "bytes": 112,
+    "texto": null,
+    "erros_vs_OLA": null
+  },
+  {
+    "arquivo": "sinal_rx3.wav",
+    "receptor": "professor",
+    "sfd_ok": false,
+    "pico_sfd": 12.0,
+    "bytes": 62,
+    "texto": null,
+    "erros_vs_OLA": null
+  }
+]

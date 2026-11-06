@@ -1,0 +1,94 @@
+{
+  "extras": [
+    {
+      "cenario": "ideal",
+      "descricao": "sem canal: saida do TX direto no RX (como teste.m)",
+      "erros": 0,
+      "bits": 64,
+      "ber": 0.0,
+      "sfd_ok": true,
+      "pico_sfd": 32.0,
+      "invertido": false,
+      "snr_decisao_db": 27.386971129434706
+    },
+    {
+      "cenario": "realista",
+      "descricao": "atraso 0.5 s, ganho 0.3, fase 1 rad, desvio 0.5 Hz, relogio 100 ppm, Eb/N0 12 dB",
+      "erros": 0,
+      "bits": 64,
+      "ber": 0.0,
+      "sfd_ok": true,
+      "pico_sfd": 32.0,
+      "invertido": false,
+      "snr_decisao_db": 12.344792784549945
+    },
+    {
+      "cenario": "fase_180",
+      "descricao": "portadora com 180 graus: testa a correcao de polaridade pelo SFD",
+      "erros": 0,
+      "bits": 64,
+      "ber": 0.0,
+      "sfd_ok": true,
+      "pico_sfd": -32.0,
+      "invertido": true,
+      "snr_decisao_db": 14.649699032141028
+    },
+    {
+      "cenario": "ruidoso",
+      "descricao": "Eb/N0 6 dB, desvio 1 Hz, relogio 200 ppm",
+      "erros": 0,
+      "bits": 64,
+      "ber": 0.0,
+      "sfd_ok": true,
+      "pico_sfd": -32.0,
+      "invertido": true,
+      "snr_decisao_db": 7.949703096560976
+    }
+  ],
+  "professor": [
+    {
+      "cenario": "ideal",
+      "descricao": "sem canal: saida do TX direto no RX (como teste.m)",
+      "erros": 0,
+      "bits": 64,
+      "ber": 0.0,
+      "sfd_ok": true,
+      "pico_sfd": 32.0,
+      "invertido": false,
+      "snr_decisao_db": 314.9979429647507
+    },
+    {
+      "cenario": "realista",
+      "descricao": "atraso 0.5 s, ganho 0.3, fase 1 rad, desvio 0.5 Hz, relogio 100 ppm, Eb/N0 12 dB",
+      "erros": 32,
+      "bits": 64,
+      "ber": 0.5,
+      "sfd_ok": false,
+      "pico_sfd": -14.0,
+      "invertido": true,
+      "snr_decisao_db": 3.312670574415873
+    },
+    {
+      "cenario": "fase_180",
+      "descricao": "portadora com 180 graus: testa a correcao de polaridade pelo SFD",
+      "erros": 11,
+      "bits": 64,
+      "ber": 0.171875,
+      "sfd_ok": false,
+      "pico_sfd": -28.0,
+      "invertido": true,
+      "snr_decisao_db": 3.0625490972158254
+    },
+    {
+      "cenario": "ruidoso",
+      "descricao": "Eb/N0 6 dB, desvio 1 Hz, relogio 200 ppm",
+      "erros": 30,
+      "bits": 64,
+      "ber": 0.46875,
+      "sfd_ok": false,
+      "pico_sfd": 16.0,
+      "invertido": false,
+      "snr_decisao_db": 2.6353012069293174
+    }
+  ]
+}
