@@ -29,5 +29,6 @@ Equipe: Arthur Balejo (enlace básico), Renato Ramos (CRC/Hamming), Claus Bracci
 | Sincronização | laço de Costas (portadora), cedo-tarde (símbolo), correlação com o SFD (quadro) |
 
 ## Pendências
-- [ ] Rodar a demonstração acústica (1 máquina e 2 máquinas) e preencher [[Resultados#Transmissão acústica]]
+- [x] Demonstração acústica em 1 máquina (06/11) em [[Resultados#3. Transmissão acústica]]
+- [ ] Demonstração acústica em 2 máquinas
 - [ ] **Confirmar com o professor que Python é aceito**: a especificação pede código em MATLAB/Octave e a proposta do Marco 1 pediu essa confirmação. Resolver antes de 06/11.

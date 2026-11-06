@@ -88,34 +88,37 @@ O `rx.m` vem com `RB = 400`, mas os arquivos foram gravados a 100 bit/s. Com 400
 
 ## 3. Transmissão acústica
 
-> [!todo] A preencher depois da demonstração
-> Nenhum resultado acústico da equipe foi registrado ainda. Procedimento em [[Como usar]] e testes T6–T8 em [[Plano de testes]].
-
 ### Uma máquina (alto-falante → microfone do mesmo notebook)
 | Campo | Valor |
 |---|---|
-| Data / máquina | |
-| Dispositivos (saída / entrada) | |
-| Volume, distância, ambiente | |
+| Data / máquina | 06/11/2026, 17h55 · Lenovo ThinkPad E14 Gen 3, Fedora, PipeWire |
+| Dispositivos (saída / entrada) | alto-falante e microfone internos (Ryzen HD Audio, ALC257) |
+| Volume, distância, ambiente | reprodução 70%, captura 100%; distância do próprio notebook; ambiente não registrado |
 | Payload | PRBS-7, 64 bits |
-| Receptor | com extras / original |
-| Pico gravado | |
-| SFD (pico, invertido) | |
-| Erros / BER | |
-| SNR na decisão (dB) | |
-| Pasta de evidências | `evidencias/acustico_1maquina_…` |
+| Comando | `python -m modem_py.acustico --prbs 64` (e `--professor`) |
+
+| Execução | Pasta | Receptor | Pico gravado | SFD | Invertido | Erros | SNR (dB) |
+|---|---|---|---|---|---|---|---|
+| 1 | `acustico_1maquina_20261106_175455` | extras | 1,45 | −32 | sim | **0/64** | 20,4 |
+| 2 | `acustico_1maquina_20261106_175501` | extras | 1,42 | +32 | não | **0/64** | 21,2 |
+| 3 | `acustico_1maquina_20261106_175507` | extras | 1,45 | −32 | sim | **0/64** | 15,4 |
+| 4 | `acustico_1maquina_20261106_175512` | original | 1,47 | −28 (abaixo de 28,8) | sim | 4/64 (posições 11, 14, 32, 34) | 3,7 |
+| 5 | `acustico_1maquina_20261106_175519` | original | 1,42 | +22 (abaixo de 28,8) | não | 10/64 (LEN lido como 9) | 3,2 |
+
+Com os extras, as 3 execuções saíram sem erros. Em duas, o Costas travou em 180° e a correlação com o SFD corrigiu a polaridade. O receptor original não atingiu o limiar do SFD em nenhuma das duas execuções.
+
+![[acustico_bits_enviados_recebidos.png]]
+![[acustico_correlacao_sfd.png]]
+![[acustico_constelacao.png]]
+
+Receptor original (execução 5):
+![[acustico_professor_bits.png]]
 
 ### Duas máquinas
-| Campo | Valor |
-|---|---|
-| Data / máquinas TX e RX | |
-| Distância | |
-| Payload | |
-| Receptor | |
-| SFD (pico, invertido) | |
-| Erros / BER | |
-| SNR na decisão (dB) | |
-| Pasta de evidências | `evidencias/acustico_2maquinas_…` |
+Ainda não realizado (T8 em [[Plano de testes]]).
 
 ### Limitações observadas
-- (anotar: eco da sala, volume mínimo que funciona, distância máxima, ruído, efeito do `--professor`)
+- Poucas repetições (3 + 2) numa só máquina: a taxa de sucesso ainda não tem significado estatístico.
+- O pico gravado passou de 1,0 (~1,45), o que indica ganho de captura alto. O AGC compensa, mas o receptor original não.
+- Volume mínimo, distância máxima e efeito do ambiente ainda não foram medidos.
+- Com fones Bluetooth conectados, o PipeWire usa os fones como saída e entrada padrão, e os dispositivos JACK não aceitam 8 kHz. Foi preciso trocar o padrão (`wpctl set-default`) para o alto-falante e o microfone internos durante o teste.
