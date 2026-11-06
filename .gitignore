@@ -22,3 +22,6 @@ docs/.obsidian/
 *.swp
 *~
 .DS_Store
+
+# Relatorio do Marco 2 (LaTeX, compilado no Overleaf)
+/relatorio_marco2/
