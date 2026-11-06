@@ -6,8 +6,8 @@ tags: [modem-acustico, planejamento]
 Voltar: [[00 - Índice]]
 
 ## Antes de 06/11 (Marco 2)
-- [ ] **Confirmar com o professor que Python é aceito.** A especificação pede "código-fonte executável em MATLAB/Octave", e a proposta do Marco 1 pediu essa confirmação. Se a resposta for não, o porte volta para Octave seguindo a mesma estrutura: os módulos já espelham os arquivos `.m` (ver [[Arquitetura]]).
-- [ ] Rodar T7 e T8 ([[Plano de testes]]) e preencher [[Resultados#Transmissão acústica]].
+- [x] Python autorizado pelo professor (06/11).
+- [x] T7 (uma máquina) e T8 (celular → notebook, 30 cm) feitos em 06/11; ver [[Resultados]].
 - [ ] Testar volume e distância e anotar as limitações.
 - [ ] Escolher as figuras para o PDF do marco: bits enviados × recebidos, correlação do SFD, olho, constelação e espectro (uma execução acústica + simulação realista).
 

@@ -1,0 +1,67 @@
+{
+  "cenario": "acustico_2aparelhos_30cm_vol50",
+  "data": "2026-11-06 19:00:31",
+  "maquina": "fedora",
+  "tx_config": {
+    "rb": 100,
+    "fp": 2000,
+    "fa": 8000,
+    "rolloff": 0.5,
+    "rc_delay": 3,
+    "amplitude": 0.9
+  },
+  "rx_config": {
+    "rb": 100,
+    "fp": 2000,
+    "fa": 8000,
+    "costas_order": 64,
+    "costas_cutoff": 0.001,
+    "costas_mu": 0.03,
+    "el_d": 1,
+    "el_err": 0.01,
+    "sfd_threshold": 0.9,
+    "bandpass": true,
+    "bandpass_bw": 1000.0,
+    "agc": true,
+    "lowpass": true,
+    "lowpass_cutoff": null,
+    "lowpass_taps": null
+  },
+  "quadro": {
+    "sfd_encontrado": true,
+    "pico_correlacao": -32.0,
+    "posicao_sfd_bit": 228,
+    "polaridade_invertida": true,
+    "bytes_cabecalho": 8,
+    "payload_completo": true,
+    "bits_decididos": 1998
+  },
+  "comparacao": {
+    "bits_enviados": "0000001000001100001010001111001000101100111010100111110100001110",
+    "bits_recebidos": "0000001000001100001010001111001000101100111010100111110100001110",
+    "n_sent": 64,
+    "n_received": 64,
+    "n_errors": 0,
+    "missing": 0,
+    "ber": 0.0,
+    "error_positions": [],
+    "equal": true
+  },
+  "sinal": {
+    "amostras_tx": null,
+    "duracao_tx_s": null,
+    "amostras_rx": 160000,
+    "pico_rx": 1.3328344821929932,
+    "snr_decisao_db": 7.031045731744188
+  },
+  "figuras": [
+    "espectro.png",
+    "olho.png",
+    "constelacao.png",
+    "correlacao_sfd.png",
+    "bits_enviados_recebidos.png",
+    "sincronizacao.png"
+  ],
+  "payload": "PRBS-7, 64 bits",
+  "origem": "microfone"
+}

@@ -30,5 +30,5 @@ Equipe: Arthur Balejo (enlace básico), Renato Ramos (CRC/Hamming), Claus Bracci
 
 ## Pendências
 - [x] Demonstração acústica em 1 máquina (06/11) em [[Resultados#3. Transmissão acústica]]
-- [ ] Demonstração acústica em 2 máquinas
-- [ ] **Confirmar com o professor que Python é aceito**: a especificação pede código em MATLAB/Octave e a proposta do Marco 1 pediu essa confirmação. Resolver antes de 06/11.
+- [x] Demonstração acústica entre dois aparelhos, celular → notebook (06/11): 3 de 5 sem erros a 30 cm
+- [x] Python autorizado pelo professor (06/11)

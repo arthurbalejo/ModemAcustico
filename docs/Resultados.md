@@ -93,7 +93,7 @@ O `rx.m` vem com `RB = 400`, mas os arquivos foram gravados a 100 bit/s. Com 400
 |---|---|
 | Data / máquina | 06/11/2026, 17h55 · Lenovo ThinkPad E14 Gen 3, Fedora, PipeWire |
 | Dispositivos (saída / entrada) | alto-falante e microfone internos (Ryzen HD Audio, ALC257) |
-| Volume, distância, ambiente | reprodução 70%, captura 100%; distância do próprio notebook; ambiente não registrado |
+| Volume, distância, ambiente | reprodução 70%, captura 100%; distância do próprio notebook; residência no centro, perto de rua movimentada, janela sem isolamento (ruído de tráfego) |
 | Payload | PRBS-7, 64 bits |
 | Comando | `python -m modem_py.acustico --prbs 64` (e `--professor`) |
 
@@ -114,11 +114,47 @@ Com os extras, as 3 execuções saíram sem erros. Em duas, o Costas travou em 1
 Receptor original (execução 5):
 ![[acustico_professor_bits.png]]
 
-### Duas máquinas
-Ainda não realizado (T8 em [[Plano de testes]]).
+### Dois aparelhos (celular → notebook)
+| Campo | Valor |
+|---|---|
+| Data | 06/11/2026, 18h15 a 19h03 |
+| TX | Samsung Galaxy S20 FE 5G: `sinal_tx.wav` (gerado por `tx --wav`) servido pela rede local e tocado no navegador |
+| RX | ThinkPad E14 Gen 3, microfone interno, captura em 50%: `rx --gravar 20 --nivel 0 --esperado-prbs 64 --evidencias evidencias` |
+| Configuração final | 30 cm, 100 bit/s, Dolby Atmos desligado, volume do celular ~50% |
+| Ambiente | o mesmo do teste em uma máquina (ruído de tráfego da rua) |
+
+`--nivel 0` porque o ruído de rua (abaixo de 300 Hz) já passava do `NS_min`.
+
+| Execução | Pasta `acustico_2aparelhos_30cm_vol50_…` | SFD | Invertido | Erros | SNR (dB) |
+|---|---|---|---|---|---|
+| A | `20261106_185920` | 28 (abaixo de 28,8) | não | 1/64 (posição 13) | 3,8 |
+| B | `20261106_190030` | −32 | sim | **0/64** | 7,0 |
+| C | `20261106_190119` | 22 | não | 29/64 (quadro perdido) | — |
+| D | `20261106_190215` | +32 | não | **0/64** | 8,2 |
+| E | `20261106_190256` | +32 | não | **0/64** | 8,3 |
+
+Resultado: 3 de 5 sem erros e 1 com um único erro.
+
+![[acustico2_bits_enviados_recebidos.png]]
+![[acustico2_correlacao_sfd.png]]
+![[acustico2_constelacao.png]]
+
+Tentativas anteriores, todas sem sincronização do quadro:
+
+| Pasta | Condição | Resultado |
+|---|---|---|
+| `acustico_2aparelhos_1m_20261106_181523` | 1 m, 100 bit/s | **inválida**: a gravação terminou antes de o celular baixar o arquivo |
+| `acustico_2aparelhos_30cm_20261106_181647` | volume máximo, Dolby ligado | SFD 20, 30/64 |
+| `acustico_2aparelhos_30cm_20261106_184808` | Dolby desligado, volume ~80% | SFD 24, 18/64 |
+| `acustico_2aparelhos_30cm_50bps_20261106_184926` | celular tocou o arquivo de 100 bit/s, RX em 50 | **inválida** |
+| `acustico_2aparelhos_30cm_50bps_20261106_185130` | 50 bit/s, volume ~80% | SFD −16, 33/64 |
+| `acustico_2aparelhos_30cm_vol50_20261106_185631` | celular tocou o arquivo de 50 bit/s, RX em 100 | **inválida** (redecodificada a 50 em `…50bps_vol50_20261106_185648`: SFD 22, 35/64) |
+
+Diagnóstico das falhas: SNR alta na banda (até ~360× o ruído) e portadora exatamente em 2000 Hz, mas a fase do canal, estimada com o sinal transmitido conhecido, variava 1–2,5 rad em janelas de 50 ms. A mudança decisiva foi tocar a 100 bit/s com volume moderado e sem efeitos de áudio.
 
 ### Limitações observadas
-- Poucas repetições (3 + 2) numa só máquina: a taxa de sucesso ainda não tem significado estatístico.
+- Poucas repetições (3 + 2 numa máquina, 5 na configuração final entre aparelhos): as taxas de sucesso ainda não têm significado estatístico.
+- Entre aparelhos, só funciona a curta distância (30 cm) e é sensível ao processamento de áudio do celular (Dolby Atmos, volume alto). Faltam distâncias maiores, o sentido inverso e dois computadores.
 - O pico gravado passou de 1,0 (~1,45), o que indica ganho de captura alto. O AGC compensa, mas o receptor original não.
 - Volume mínimo, distância máxima e efeito do ambiente ainda não foram medidos.
 - Com fones Bluetooth conectados, o PipeWire usa os fones como saída e entrada padrão, e os dispositivos JACK não aceitam 8 kHz. Foi preciso trocar o padrão (`wpctl set-default`) para o alto-falante e o microfone internos durante o teste.
