@@ -4,6 +4,8 @@ UFSM00050 Comunicação de Dados, 2026/2. Porte para Python do código-base `mod
 BPSK, 100 bit/s, portadora de 2 kHz, amostragem de 8 kHz, cosseno levantado r = 0,5, preâmbulo + SFD de 32 bits,
 laço de Costas, sincronização cedo-tarde e correlação com o SFD.
 
+Repositório: https://github.com/arthurbalejo/ModemAcustico
+
 ## Pontos de entrada
 | | Comando | Função Python |
 |---|---|---|
@@ -14,6 +16,8 @@ laço de Costas, sincronização cedo-tarde e correlação com o SFD.
 
 ## Início rápido
 ```bash
+git clone https://github.com/arthurbalejo/ModemAcustico.git
+cd ModemAcustico
 python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 .venv/bin/python -m pytest -q                       # testes
 .venv/bin/python -m modem_py.simular                # simulação + evidências em evidencias/
