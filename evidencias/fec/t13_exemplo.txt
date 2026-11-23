@@ -1,0 +1,9 @@
+T13 - limite do Hamming (7,4): 2 erros no mesmo bloco (simulacao por software)
+Dados (0xA5) + CRC-8: 1010 0101 0111 0010
+Codificado          : 1011010 0100101 0001111 0101010
+Erros nas posicoes [0, 4] (bloco 0)
+Recebido            : 0011110 0100101 0001111 0101010
+Sindrome do bloco 0 : 4 -> o decodificador troca o bit 3 (errado)
+Decodificado        : 1110 0101 0111 0010
+Bits de dados errados: [1]
+CRC-8 ok            : False  -> erro nao corrigido detectado

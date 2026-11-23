@@ -1,0 +1,10 @@
+T12 - Hamming (7,4) corrige 1 erro por bloco (simulacao por software)
+Mensagem: 'UFSM' (32 bits, LSB primeiro)
+Dados        : 1010 1010 0110 0010 1100 1010 1011 0010
+Codificado   : 1011010 1011010 1100110 0101010 0111100 1011010 0110011 0101010
+Erros nas posicoes [3, 20, 50] (blocos [0, 2, 7])
+Recebido     : 1010010 1011010 1100111 0101010 0111100 1011010 0110011 0001010
+Sindromes    : [4, 0, 7, 0, 0, 0, 0, 2]
+Corrigidos   : 3 blocos, posicoes [3, 20, 50]
+Decodificado : 1010 1010 0110 0010 1100 1010 1011 0010
+Texto        : 'UFSM'  (igual ao original: True)

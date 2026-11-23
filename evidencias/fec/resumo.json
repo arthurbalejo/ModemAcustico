@@ -1,0 +1,198 @@
+{
+  "tipo": "simulacao por software (erros injetados nos bits, sem canal acustico)",
+  "crc": "CRC-8, g(x) = x^8 + x^2 + x + 1 (0x07), inicio 0, sem reflexao",
+  "hamming": "Hamming (7,4), p1 p2 d1 p3 d2 d3 d4",
+  "T11": {
+    "taxas": [
+      {
+        "bytes_dados": 8,
+        "erros": 0,
+        "casos": 1000,
+        "rejeitados": 0,
+        "taxa": 0.0
+      },
+      {
+        "bytes_dados": 8,
+        "erros": 1,
+        "casos": 1000,
+        "rejeitados": 1000,
+        "taxa": 1.0
+      },
+      {
+        "bytes_dados": 8,
+        "erros": 2,
+        "casos": 1000,
+        "rejeitados": 1000,
+        "taxa": 1.0
+      },
+      {
+        "bytes_dados": 8,
+        "erros": 3,
+        "casos": 1000,
+        "rejeitados": 1000,
+        "taxa": 1.0
+      },
+      {
+        "bytes_dados": 32,
+        "erros": 0,
+        "casos": 1000,
+        "rejeitados": 0,
+        "taxa": 0.0
+      },
+      {
+        "bytes_dados": 32,
+        "erros": 1,
+        "casos": 1000,
+        "rejeitados": 1000,
+        "taxa": 1.0
+      },
+      {
+        "bytes_dados": 32,
+        "erros": 2,
+        "casos": 1000,
+        "rejeitados": 997,
+        "taxa": 0.997
+      },
+      {
+        "bytes_dados": 32,
+        "erros": 3,
+        "casos": 1000,
+        "rejeitados": 1000,
+        "taxa": 1.0
+      }
+    ],
+    "pares_exaustivos": [
+      {
+        "bits_dados": 119,
+        "pares": 8001,
+        "nao_detectados": 0
+      },
+      {
+        "bits_dados": 256,
+        "pares": 34716,
+        "nao_detectados": 147
+      }
+    ],
+    "exemplo": {
+      "mensagem": "UFSM",
+      "bits": "10101010 01100010 11001010 10110010",
+      "crc": "00001000",
+      "erro_na_posicao": 5,
+      "crc_ok_sem_erro": true,
+      "crc_ok_com_erro": false,
+      "resto_com_erro": "10001111"
+    }
+  },
+  "T12": {
+    "casos": 112,
+    "corrigidos": 112,
+    "exemplo": {
+      "posicoes_erro": [
+        3,
+        20,
+        50
+      ],
+      "sindromes": [
+        4,
+        0,
+        7,
+        0,
+        0,
+        0,
+        0,
+        2
+      ],
+      "corrigidos": [
+        3,
+        20,
+        50
+      ],
+      "recuperado": true
+    }
+  },
+  "T13": {
+    "casos": 84,
+    "decodificados_errado": 84,
+    "crc_acusou": 84
+  },
+  "T14": {
+    "nbytes": 32,
+    "pontos": [
+      {
+        "ber_injetada": 0.001,
+        "ber_medida_canal": 0.001,
+        "ber_residual": 3.90625e-06,
+        "mensagens": 2000,
+        "mensagens_erradas": 2,
+        "erradas_detectadas_crc": 2,
+        "erradas_nao_detectadas": 0
+      },
+      {
+        "ber_injetada": 0.002,
+        "ber_medida_canal": 0.001971861471861472,
+        "ber_residual": 2.1484375e-05,
+        "mensagens": 2000,
+        "mensagens_erradas": 6,
+        "erradas_detectadas_crc": 6,
+        "erradas_nao_detectadas": 0
+      },
+      {
+        "ber_injetada": 0.005,
+        "ber_medida_canal": 0.004969696969696969,
+        "ber_residual": 0.000205078125,
+        "mensagens": 2000,
+        "mensagens_erradas": 60,
+        "erradas_detectadas_crc": 60,
+        "erradas_nao_detectadas": 0
+      },
+      {
+        "ber_injetada": 0.01,
+        "ber_medida_canal": 0.009826839826839826,
+        "ber_residual": 0.000796875,
+        "mensagens": 2000,
+        "mensagens_erradas": 222,
+        "erradas_detectadas_crc": 222,
+        "erradas_nao_detectadas": 0
+      },
+      {
+        "ber_injetada": 0.02,
+        "ber_medida_canal": 0.02020238095238095,
+        "ber_residual": 0.003494140625,
+        "mensagens": 2000,
+        "mensagens_erradas": 821,
+        "erradas_detectadas_crc": 819,
+        "erradas_nao_detectadas": 2
+      },
+      {
+        "ber_injetada": 0.05,
+        "ber_medida_canal": 0.049724025974025976,
+        "ber_residual": 0.01923046875,
+        "mensagens": 2000,
+        "mensagens_erradas": 1875,
+        "erradas_detectadas_crc": 1869,
+        "erradas_nao_detectadas": 6
+      },
+      {
+        "ber_injetada": 0.1,
+        "ber_medida_canal": 0.1003095238095238,
+        "ber_residual": 0.067330078125,
+        "mensagens": 2000,
+        "mensagens_erradas": 2000,
+        "erradas_detectadas_crc": 1986,
+        "erradas_nao_detectadas": 14
+      }
+    ],
+    "exemplo": {
+      "posicoes_erro": [
+        3,
+        20,
+        29,
+        31,
+        50
+      ],
+      "corrigidos": 4,
+      "erros_restantes": 1,
+      "crc_ok": false
+    }
+  }
+}
