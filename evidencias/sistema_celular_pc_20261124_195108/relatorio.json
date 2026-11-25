@@ -1,0 +1,66 @@
+{
+  "cenario": "sistema_celular_pc",
+  "data": "2026-11-24 19:51:08",
+  "maquina": "c1",
+  "tx_config": {
+    "rb": 100,
+    "fp": 2000,
+    "fa": 8000,
+    "rolloff": 0.5,
+    "rc_delay": 3,
+    "amplitude": 0.9
+  },
+  "rx_config": {
+    "rb": 100,
+    "fp": 2000,
+    "fa": 8000,
+    "costas_order": 64,
+    "costas_cutoff": 0.001,
+    "costas_mu": 0.03,
+    "el_d": 1,
+    "el_err": 0.01,
+    "sfd_threshold": 0.9,
+    "bandpass": true,
+    "bandpass_bw": 1000.0,
+    "agc": true,
+    "lowpass": true,
+    "lowpass_cutoff": null,
+    "lowpass_taps": null
+  },
+  "quadro": {
+    "sfd_encontrado": true,
+    "pico_correlacao": -32.0,
+    "posicao_sfd_bit": 186,
+    "polaridade_invertida": true,
+    "bytes_cabecalho": 27,
+    "payload_completo": true,
+    "bits_decididos": 698
+  },
+  "comparacao": {
+    "bits_enviados": "000000011010011110000000000001010101110000110011011010011000011011001111111110000000010101001010101000011000000001010100111100111000001010100101010111000000101101111111001011001010100101010011110001111001001100",
+    "bits_recebidos": "000000011010011110000000000001010101110000110011011010011000011011001111111110000000010101001010101000011000000001010100111100111000001010100101010111000000101101111111001011001010100101010011110001111001001100000000",
+    "n_sent": 210,
+    "n_received": 216,
+    "n_errors": 0,
+    "missing": 0,
+    "ber": 0.0,
+    "error_positions": [],
+    "equal": false
+  },
+  "sinal": {
+    "amostras_tx": null,
+    "duracao_tx_s": null,
+    "amostras_rx": 56000,
+    "pico_rx": 0.69122314453125,
+    "snr_decisao_db": 14.955137495718434
+  },
+  "figuras": [
+    "espectro.png",
+    "olho.png",
+    "constelacao.png",
+    "correlacao_sfd.png",
+    "bits_enviados_recebidos.png",
+    "sincronizacao.png"
+  ],
+  "origem": "microfone"
+}

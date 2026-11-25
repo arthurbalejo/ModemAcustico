@@ -1,0 +1,61 @@
+{
+  "cenario": "sistema_celular_pc_2_fluxos",
+  "cabecalho": {
+    "n_a": 24,
+    "n_b": 40,
+    "slot": 7,
+    "fec": true,
+    "ok": true,
+    "corrigidos": 0
+  },
+  "completo": true,
+  "bits_cabecalho": 70,
+  "bits_por_fluxo": [
+    56,
+    84
+  ],
+  "fluxos": [
+    {
+      "fluxo": "A",
+      "bits": "111100100011001010000010",
+      "texto": "OLA",
+      "quadro_ok": true,
+      "cabecalho_ok": true,
+      "crc_ok": true,
+      "corrigidos": 0,
+      "posicoes": [],
+      "blocos": 8,
+      "esperado": "texto: 'OLA'",
+      "comparacao": {
+        "n_sent": 24,
+        "n_received": 24,
+        "n_errors": 0,
+        "missing": 0,
+        "ber": 0.0,
+        "error_positions": [],
+        "equal": true
+      }
+    },
+    {
+      "fluxo": "B",
+      "bits": "1011001010101010011100100010001011110010",
+      "texto": "MUNDO",
+      "quadro_ok": true,
+      "cabecalho_ok": true,
+      "crc_ok": true,
+      "corrigidos": 0,
+      "posicoes": [],
+      "blocos": 12,
+      "esperado": "texto: 'MUNDO'",
+      "comparacao": {
+        "n_sent": 40,
+        "n_received": 40,
+        "n_errors": 0,
+        "missing": 0,
+        "ber": 0.0,
+        "error_positions": [],
+        "equal": true
+      }
+    }
+  ]
+}
