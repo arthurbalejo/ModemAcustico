@@ -1,0 +1,75 @@
+{
+  "cenario": "sistema_acustico_1maquina",
+  "cabecalho": {
+    "n_a": 24,
+    "n_b": 40,
+    "slot": 7,
+    "fec": true,
+    "ok": true,
+    "corrigidos": 2
+  },
+  "completo": true,
+  "bits_cabecalho": 70,
+  "bits_por_fluxo": [
+    56,
+    84
+  ],
+  "fluxos": [
+    {
+      "fluxo": "A",
+      "bits": "111100100011001010000010",
+      "texto": "OLA",
+      "quadro_ok": true,
+      "cabecalho_ok": true,
+      "crc_ok": true,
+      "corrigidos": 4,
+      "posicoes": [
+        3,
+        19,
+        23,
+        40
+      ],
+      "blocos": 8,
+      "esperado": "texto: 'OLA'",
+      "comparacao": {
+        "n_sent": 24,
+        "n_received": 24,
+        "n_errors": 0,
+        "missing": 0,
+        "ber": 0.0,
+        "error_positions": [],
+        "equal": true
+      }
+    },
+    {
+      "fluxo": "B",
+      "bits": "1011001010101010011100100111001011110010",
+      "texto": "MUNNO",
+      "quadro_ok": true,
+      "cabecalho_ok": true,
+      "crc_ok": false,
+      "corrigidos": 5,
+      "posicoes": [
+        3,
+        26,
+        43,
+        56,
+        72
+      ],
+      "blocos": 12,
+      "esperado": "texto: 'MUNDO'",
+      "comparacao": {
+        "n_sent": 40,
+        "n_received": 40,
+        "n_errors": 2,
+        "missing": 0,
+        "ber": 0.05,
+        "error_positions": [
+          25,
+          27
+        ],
+        "equal": false
+      }
+    }
+  ]
+}

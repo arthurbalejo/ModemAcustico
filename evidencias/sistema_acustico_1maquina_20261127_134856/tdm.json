@@ -1,0 +1,61 @@
+{
+  "cenario": "sistema_acustico_1maquina",
+  "cabecalho": {
+    "n_a": 3942,
+    "n_b": 470,
+    "slot": 5,
+    "fec": true,
+    "ok": false,
+    "corrigidos": 9
+  },
+  "completo": false,
+  "bits_cabecalho": 70,
+  "bits_por_fluxo": [
+    6916,
+    840
+  ],
+  "fluxos": [
+    {
+      "fluxo": "A",
+      "bits": "",
+      "texto": "",
+      "quadro_ok": false,
+      "cabecalho_ok": false,
+      "crc_ok": false,
+      "corrigidos": 0,
+      "posicoes": [],
+      "blocos": 0,
+      "esperado": "texto: 'OLA'",
+      "comparacao": {
+        "n_sent": 24,
+        "n_received": 0,
+        "n_errors": 24,
+        "missing": 24,
+        "ber": 1.0,
+        "error_positions": [],
+        "equal": false
+      }
+    },
+    {
+      "fluxo": "B",
+      "bits": "",
+      "texto": "",
+      "quadro_ok": false,
+      "cabecalho_ok": false,
+      "crc_ok": false,
+      "corrigidos": 0,
+      "posicoes": [],
+      "blocos": 0,
+      "esperado": "texto: 'MUNDO'",
+      "comparacao": {
+        "n_sent": 40,
+        "n_received": 0,
+        "n_errors": 40,
+        "missing": 40,
+        "ber": 1.0,
+        "error_positions": [],
+        "equal": false
+      }
+    }
+  ]
+}

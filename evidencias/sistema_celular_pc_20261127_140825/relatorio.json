@@ -1,0 +1,75 @@
+{
+  "cenario": "sistema_celular_pc",
+  "data": "2026-11-27 14:08:26",
+  "maquina": "renato-Nitro-AN515-51",
+  "tx_config": {
+    "rb": 100,
+    "fp": 2000,
+    "fa": 8000,
+    "rolloff": 0.5,
+    "rc_delay": 3,
+    "amplitude": 0.9
+  },
+  "rx_config": {
+    "rb": 100,
+    "fp": 2000,
+    "fa": 8000,
+    "costas_order": 64,
+    "costas_cutoff": 0.001,
+    "costas_mu": 0.03,
+    "el_d": 1,
+    "el_err": 0.01,
+    "sfd_threshold": 0.9,
+    "bandpass": true,
+    "bandpass_bw": 1000.0,
+    "agc": true,
+    "lowpass": true,
+    "lowpass_cutoff": null,
+    "lowpass_taps": null
+  },
+  "quadro": {
+    "sfd_encontrado": true,
+    "pico_correlacao": 30.0,
+    "posicao_sfd_bit": 239,
+    "polaridade_invertida": false,
+    "bytes_cabecalho": 27,
+    "payload_completo": true,
+    "bits_decididos": 1499
+  },
+  "comparacao": {
+    "bits_enviados": "000000011010011110000000000001010101110000110011011010011000011011001111111110110011010101001010101000011101101001010101011010111000000011110101010010101000101100101010001011001010101111111010101011100001000011",
+    "bits_recebidos": "000000011010011110000000000001010101110000110011001001011000011011001111111110110011001110101010101000011101101001010101011010111000000011110101010010101000101100101010001011001010101111111010101011100001000011000000",
+    "n_sent": 210,
+    "n_received": 216,
+    "n_errors": 8,
+    "missing": 0,
+    "ber": 0.0380952380952381,
+    "error_positions": [
+      49,
+      52,
+      53,
+      85,
+      86,
+      88,
+      89,
+      90
+    ],
+    "equal": false
+  },
+  "sinal": {
+    "amostras_tx": null,
+    "duracao_tx_s": null,
+    "amostras_rx": 120000,
+    "pico_rx": 0.6334983110427856,
+    "snr_decisao_db": 7.590835220479299
+  },
+  "figuras": [
+    "espectro.png",
+    "olho.png",
+    "constelacao.png",
+    "correlacao_sfd.png",
+    "bits_enviados_recebidos.png",
+    "sincronizacao.png"
+  ],
+  "origem": "microfone"
+}
