@@ -1,0 +1,65 @@
+{
+  "cenario": "sistema_acustico_1maquina",
+  "data": "2026-11-27 13:45:07",
+  "maquina": "renato-Nitro-AN515-51",
+  "tx_config": {
+    "rb": 100,
+    "fp": 2000,
+    "fa": 8000,
+    "rolloff": 0.5,
+    "rc_delay": 3,
+    "amplitude": 0.9
+  },
+  "rx_config": {
+    "rb": 100,
+    "fp": 2000,
+    "fa": 8000,
+    "costas_order": 64,
+    "costas_cutoff": 0.001,
+    "costas_mu": 0.03,
+    "el_d": 1,
+    "el_err": 0.01,
+    "sfd_threshold": 0.9,
+    "bandpass": true,
+    "bandpass_bw": 1000.0,
+    "agc": true,
+    "lowpass": true,
+    "lowpass_cutoff": null,
+    "lowpass_taps": null
+  },
+  "quadro": {
+    "sfd_encontrado": true,
+    "pico_correlacao": -32.0,
+    "posicao_sfd_bit": 100,
+    "polaridade_invertida": true,
+    "bytes_cabecalho": 27,
+    "payload_completo": true,
+    "bits_decididos": 485
+  },
+  "comparacao": {
+    "bits_enviados": "000000011010011110000000000001010101110000110011011010011000011011001111111110110011010101001010101000011101101001010101011010111000000011110101010010101000101100101010001011001010101111111010101011100001000011",
+    "bits_recebidos": "000000011010011110000000000001010101110000110011011010011000011011001111111110110011010101001010101000011101101001010101011010111000000011110101010010101000101100101010001011001010101111111010101011100001000011000000",
+    "n_sent": 210,
+    "n_received": 216,
+    "n_errors": 0,
+    "missing": 0,
+    "ber": 0.0,
+    "error_positions": [],
+    "equal": false
+  },
+  "sinal": {
+    "amostras_tx": 26880,
+    "duracao_tx_s": 3.36,
+    "amostras_rx": 38880,
+    "pico_rx": 0.5975440740585327,
+    "snr_decisao_db": 15.988735625781613
+  },
+  "figuras": [
+    "espectro.png",
+    "olho.png",
+    "constelacao.png",
+    "correlacao_sfd.png",
+    "bits_enviados_recebidos.png",
+    "sincronizacao.png"
+  ]
+}

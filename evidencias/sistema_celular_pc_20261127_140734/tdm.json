@@ -1,0 +1,65 @@
+{
+  "cenario": "sistema_celular_pc",
+  "cabecalho": {
+    "n_a": 24,
+    "n_b": 40,
+    "slot": 7,
+    "fec": true,
+    "ok": true,
+    "corrigidos": 1
+  },
+  "completo": true,
+  "bits_cabecalho": 70,
+  "bits_por_fluxo": [
+    56,
+    84
+  ],
+  "fluxos": [
+    {
+      "fluxo": "A",
+      "bits": "111110010011001010000010",
+      "texto": "\u009fLA",
+      "quadro_ok": true,
+      "cabecalho_ok": true,
+      "crc_ok": false,
+      "corrigidos": 0,
+      "posicoes": [],
+      "blocos": 8,
+      "esperado": "texto: 'OLA'",
+      "comparacao": {
+        "n_sent": 24,
+        "n_received": 24,
+        "n_errors": 3,
+        "missing": 0,
+        "ber": 0.125,
+        "error_positions": [
+          4,
+          6,
+          7
+        ],
+        "equal": false
+      }
+    },
+    {
+      "fluxo": "B",
+      "bits": "1011001010101010011100100010001011110010",
+      "texto": "MUNDO",
+      "quadro_ok": true,
+      "cabecalho_ok": true,
+      "crc_ok": true,
+      "corrigidos": 0,
+      "posicoes": [],
+      "blocos": 12,
+      "esperado": "texto: 'MUNDO'",
+      "comparacao": {
+        "n_sent": 40,
+        "n_received": 40,
+        "n_errors": 0,
+        "missing": 0,
+        "ber": 0.0,
+        "error_positions": [],
+        "equal": true
+      }
+    }
+  ]
+}
